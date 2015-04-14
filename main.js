@@ -25,12 +25,20 @@
           }
 
           var picdiff = 100 - (diff/duration * 100);
-          $("img").css("height", picdiff + '%');
+          $("img").css("width", picdiff + '%');
+
+          if ( minutes == 0 && seconds == 0){
+            clearInterval(go);
+            console.log("stop");
+          }
+
 
       };
       // we don't want to wait a full second before the timer starts
       timer();
-      setInterval(timer, 1000);
+      var go = setInterval(timer, 1000);
+
+
   }
 
   window.onload = function () {
