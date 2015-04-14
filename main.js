@@ -25,7 +25,7 @@
           }
 
           var picdiff = 100 - (diff/duration * 100);
-          $("img").css("height", picdiff);
+          $("img").css("height", picdiff + '%');
 
       };
       // we don't want to wait a full second before the timer starts
@@ -34,10 +34,10 @@
   }
 
   window.onload = function () {
-      var fiveMinutes = 60 * 1,
-          display = document.querySelector('#time');
+      var display = document.querySelector('#time');
       $("#start").click (function() {
-        startTimer(fiveMinutes, display);
+        var input = 60 * $(".input").val();
+        startTimer(input, display);
       });
   };
 }());
