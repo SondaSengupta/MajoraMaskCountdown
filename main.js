@@ -16,7 +16,7 @@
           minutes = minutes < 10 ? "0" + minutes : minutes;
           seconds = seconds < 10 ? "0" + seconds : seconds;
 
-          display.textContent = minutes + ":" + seconds;
+          display.textContent = minutes + ":" + seconds + " minutes!";
 
           if (diff <= 0) {
               // add one second so that the count down starts at the full duration
@@ -27,10 +27,16 @@
           var picdiff = 100 - (diff/duration * 100);
           $("img").css("width", picdiff + '%');
 
+          if(minutes == 0){
+            display.textContent = minutes + ":" + seconds + " seconds!";
+          }
+
           if ( minutes == 0 && seconds == 0){
             clearInterval(go);
             console.log("stop");
           }
+
+
 
 
       };
